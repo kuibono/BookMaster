@@ -15,19 +15,19 @@ namespace BookMaster.WP8Client
 {
     public partial class App : Application
     {
-        private static MainViewModel viewModel = null;
+        private static BookViewModel viewModel = null;
 
         /// <summary>
         /// 视图用于进行绑定的静态 ViewModel。
         /// </summary>
         /// <returns>MainViewModel 对象。</returns>
-        public static MainViewModel ViewModel
+        public static BookViewModel ViewModel
         {
             get
             {
                 // 延迟创建视图模型，直至需要时
                 if (viewModel == null)
-                    viewModel = new MainViewModel();
+                    viewModel = new BookViewModel();
 
                 return viewModel;
             }

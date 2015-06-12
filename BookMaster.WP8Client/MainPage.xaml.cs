@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using BookMaster.Service.Service;
 
 namespace BookMaster.WP8Client
 {
@@ -18,6 +19,10 @@ namespace BookMaster.WP8Client
             InitializeComponent();
 
             // 将 listbox 控件的数据上下文设置为示例数据
+
+            //BookService bs = new BookService();
+            //DataContext = bs.GetAll();
+
             DataContext = App.ViewModel;
         }
 
