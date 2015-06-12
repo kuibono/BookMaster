@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
 
-  <Identity Name="cd73c37e-616b-4da2-85f1-07bd123f9188"
-            Publisher="CN=kuibono"
-            Version="1.0.0.0" />
+  <Identity Name="a2c4c774-443b-47bd-805e-86a53af6eb06" Publisher="CN=kuibono" Version="1.0.0.0"/>
+
+  <mp:PhoneIdentity PhoneProductId="97b8f90e-bd1c-43b9-a2d1-f9f91591ae8c" PhonePublisherId="eb9819c3-8b02-4119-8d51-185b0725a662"/>
 
   <Properties>
     <DisplayName>BookMaster.WP8Client</DisplayName>
@@ -12,8 +12,8 @@
   </Properties>
 
   <Prerequisites>
-    <OSMinVersion>6.3.0</OSMinVersion>
-    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
   </Prerequisites>
 
   <Resources>
@@ -21,21 +21,32 @@
   </Resources>
 
   <Applications>
-    <Application Id="App"
-        Executable="$targetnametoken$.exe"
-        EntryPoint="BookMaster.WP8Client.App">
-        <m2:VisualElements
-            DisplayName="BookMaster.WP8Client"
-            Square150x150Logo="Assets\Logo.png"
-            Square30x30Logo="Assets\SmallLogo.png"
-            Description="BookMaster.WP8Client"
-            ForegroundText="light"
-            BackgroundColor="#464646">
-            <m2:SplashScreen Image="Assets\SplashScreen.png" />
-        </m2:VisualElements>
+    <Application Id="App" Executable="AGHost.exe" EntryPoint="MainPage.xaml">
+      <m3:VisualElements DisplayName="BookMaster.WP8Client" Square150x150Logo="Assets\SquareTile150x150.png" Square44x44Logo="Assets\Logo.png" Description="BookMaster.WP8Client" ForegroundText="light" BackgroundColor="#464646">
+        <m3:DefaultTile Square71x71Logo="Assets\SquareTile71x71.png"/>
+        <m3:SplashScreen Image="Assets\SplashScreen.png"/>
+      </m3:VisualElements>
+
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="AgHost.BackgroundTask">
+          <BackgroundTasks>
+          <Task Type="systemEvent"/>
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+
     </Application>
   </Applications>
   <Capabilities>
-    <Capability Name="internetClient" />
   </Capabilities>
+
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AgHostSvcs.dll</Path>
+        <ActivatableClass ActivatableClassId="AgHost.BackgroundTask" ThreadingModel="both"/>
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+
 </Package>
