@@ -36,15 +36,17 @@
             提取属性的值。
          -->
 
-         <!--Panorama 控件-->
-        <phone:Panorama Title="我的应用程序">
+        <!--Panorama 控件-->
+        <phone:Panorama Title="阅读大师">
             <phone:Panorama.Background>
                 <ImageBrush ImageSource="/BookMaster.WP8Client;component/Assets/PanoramaBackground.png"/>
             </phone:Panorama.Background>
 
             <!--Panorama 项目一-->
-            <phone:PanoramaItem Header="first item">
-                <!--具有文字环绕的单行列表-->
+            <!--<phone:PanoramaItem Header="first item">
+                -->
+            <!--具有文字环绕的单行列表-->
+            <!--
                 <phone:LongListSelector Margin="0,0,-22,0" ItemsSource="{Binding Items}">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
@@ -54,7 +56,7 @@
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>
-            </phone:PanoramaItem>
+            </phone:PanoramaItem>-->
 
             <!--Panorama 项目二-->
             <phone:PanoramaItem>
@@ -67,7 +69,7 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Text="第二项"
+                                <TextBlock Text="我的书架"
                                            Style="{StaticResource PanoramaItemHeaderTextStyle}"
                                            Grid.Row="0"/>
                             </Grid>
@@ -77,20 +79,113 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Margin="12,2,0,4" Height="105" Width="432">
                                 <!--用图像替换矩形-->
-                                <Border BorderThickness="1" Width="99" Height="99" BorderBrush="#FFFFC700" Background="#FFFFC700"/>
+                                <!--<Border BorderThickness="1" Width="99" Height="99" BorderBrush="#FFFFC700" Background="#FFFFC700"/>-->
+                                <Image  Width="99" Height="99" Source="/Resources/Images/1127.jpg" />
                                 <StackPanel Width="311" Margin="8,-7,0,0">
                                     <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Margin="10,0" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
-                                    <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    <TextBlock Text="{Binding LineTwo}" TextWrapping="NoWrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    <TextBlock Text="最新章节：" TextWrapping="Wrap" Margin="10,0" Style="{StaticResource PhoneTextSubtleStyle}" />
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>
             </phone:PanoramaItem>
+            <phone:PanoramaItem>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-38,-22,2" Width="429" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
+                    <TextBlock Text="登录"
+                         Style="{StaticResource PanoramaItemHeaderTextStyle}"
+                         Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <TextBlock Text="账号"
+                         Style="{StaticResource PhoneTextSubtleStyle}"
+                         Grid.Row="1" Grid.Column="0"  Height="30" />
+                    <TextBlock Text="密码"
+                         Style="{StaticResource PhoneTextSubtleStyle}"
+                         Grid.Row="2" Grid.Column="0"  Height="30"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Width="300" />
+                    <TextBox Grid.Row="2" Grid.Column="1"  Width="300" InputScope="Password" />
+                    <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Row="0" Grid.Column="0" Width="200" Height="80" >
+                            <Button.Content>登录</Button.Content>
+                        </Button>
+                        <Button Grid.Row="0" Grid.Column="1" Width="200" Height="80" >
+                            <Button.Content>注册</Button.Content>
+                        </Button>
+                    </Grid>
+                    
+                </Grid>
+
+            </phone:PanoramaItem>
+            <phone:PanoramaItem>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-38,-22,2" Width="429" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="注册"
+                         Style="{StaticResource PanoramaItemHeaderTextStyle}"
+                         Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <TextBlock Text="账号"
+                         Style="{StaticResource PhoneTextSubtleStyle}"
+                         Grid.Row="1" Grid.Column="0"  Height="30" />
+                    <TextBlock Text="密码"
+                         Style="{StaticResource PhoneTextSubtleStyle}"
+                         Grid.Row="2" Grid.Column="0"  Height="30"/>
+                    <TextBlock Text="确认密码"
+                         Style="{StaticResource PhoneTextSubtleStyle}"
+                         Grid.Row="3" Grid.Column="0"  Height="30"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Width="300" />
+                    <TextBox Grid.Row="2" Grid.Column="1"  Width="300" InputScope="Password" />
+                    <TextBox Grid.Row="3" Grid.Column="1"  Width="300" InputScope="Password" />
+                    <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Row="0" Grid.Column="0" Width="200" Height="80" >
+                            <Button.Content>注册</Button.Content>
+                        </Button>
+                        <Button Grid.Row="0" Grid.Column="1" Width="200" Height="80" >
+                            <Button.Content>取消</Button.Content>
+                        </Button>
+                    </Grid>
+                </Grid>
+
+            </phone:PanoramaItem>
             <!--全景项目三-->
-            <phone:PanoramaItem Header="third item" Orientation="Horizontal">
-                <!--具有大型图像占位符的双倍宽度的全景-->
+            <!--<phone:PanoramaItem Header="third item" Orientation="Horizontal">
+                -->
+            <!--具有大型图像占位符的双倍宽度的全景-->
+            <!--
                 <Grid>
                     <StackPanel Margin="0,4,16,0" Orientation="Vertical" VerticalAlignment="Top">
                         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
@@ -107,7 +202,7 @@
                         </StackPanel>
                     </StackPanel>
                 </Grid>
-            </phone:PanoramaItem>
+            </phone:PanoramaItem>-->
         </phone:Panorama>
 
         <!--取消注释，以显示对齐网格，从而帮助确保

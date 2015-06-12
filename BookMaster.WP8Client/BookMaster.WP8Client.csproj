@@ -133,6 +133,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Images\1127.jpg" />
+    <Content Include="Resources\Images\330.jpg" />
+    <Content Include="Resources\Images\686.jpg" />
     <Resource Include="Assets\PanoramaBackground.png" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
