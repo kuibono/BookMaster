@@ -10,7 +10,7 @@ namespace BookMaster.Service.Context
 {
     public class BookContext:DataContext
     {
-        public BookContext() : base("BookDb")
+        public BookContext() : base("Data Source='isostore:/bookdb.sdf';Password='111111'")
         {
 
         }

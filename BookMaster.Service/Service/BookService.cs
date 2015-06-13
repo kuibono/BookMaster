@@ -18,12 +18,16 @@ namespace BookMaster.Service.Service
             {
                 Context.CreateDatabase();
             }
-            return Context.PersonalBook.ToList();
+            if (Context.GetTable<PersonalBook>().Count()==0)
+            {
+                TestCreate();
+            }
+            return Context.GetTable<PersonalBook>().ToList();
         }
 
         public void TestCreate()
         {
-            for(int i = 0; i < 10; i++)
+            for(int i = 1; i < 10; i++)
             {
                 PersonalBook book = new PersonalBook();
                 book.Author = "南派三叔";
@@ -31,7 +35,9 @@ namespace BookMaster.Service.Service
                 book.ChapterId = 0;
                 book.ChapterTitle = "黄河鬼棺";
                 book.Title = "盗墓笔记"+i;
-                Context.PersonalBook.Attach(book);
+                book.Id = i;
+                book.UpdateTime = DateTime.Now;
+                Context.GetTable<PersonalBook>().InsertOnSubmit(book);
             }
             Context.SubmitChanges(System.Data.Linq.ConflictMode.ContinueOnConflict);
         }

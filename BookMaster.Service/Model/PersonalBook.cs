@@ -11,18 +11,24 @@ namespace BookMaster.Service.Model
     [Table]
     public class PersonalBook : INotifyPropertyChanged, INotifyPropertyChanging
     {
-        [Column(IsDbGenerated =true, IsPrimaryKey =true)]
+        [Column(IsDbGenerated =false, IsPrimaryKey =true, DbType ="bigint")]
         public long Id { get; set; }
 
+        [Column(DbType = "bigint")]
         public long BookId { get; set; }
 
+        [Column(DbType = "nvarchar(255)")]
         public string Title { get; set; }
 
+        [Column(DbType = "nvarchar(255)")]
         public string Author { get; set; }
-
+        [Column(DbType = "bigint")]
         public long ChapterId { get; set; }
 
+        [Column(DbType = "nvarchar(255)")]
         public string ChapterTitle { get; set; }
+        [Column(DbType = "datetime")]
+        public DateTime UpdateTime { get; set; }
 
         public event PropertyChangingEventHandler PropertyChanging;
         public event PropertyChangedEventHandler PropertyChanged;

@@ -1,0 +1,17 @@
+﻿<vx:BookViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:BookMaster.Service.Model;assembly=BookMaster.Service"
+    xmlns:vx="clr-namespace:BookMaster.WP8Client.ViewModels">
+
+    <vx:BookViewModel.Items>
+        <vm:PersonalBook Id="0" BookId="1" Title="书籍名称" Author="南派三叔" ChapterId="0" ChapterTitle="七星鲁王馆" UpdateTime="2015-5-5"/>
+        <vm:PersonalBook Id="0" BookId="1" Title="书籍名称" Author="南派三叔" ChapterId="0" ChapterTitle="七星鲁王馆"/>
+        <vm:PersonalBook Id="0" BookId="1" Title="书籍名称" Author="南派三叔" ChapterId="0" ChapterTitle="七星鲁王馆"/>
+        <vm:PersonalBook Id="0" BookId="1" Title="书籍名称" Author="南派三叔" ChapterId="0" ChapterTitle="七星鲁王馆"/>
+        <vm:PersonalBook Id="0" BookId="1" Title="书籍名称" Author="南派三叔" ChapterId="0" ChapterTitle="七星鲁王馆"/>
+        <vm:PersonalBook Id="0" BookId="1" Title="书籍名称" Author="南派三叔" ChapterId="0" ChapterTitle="七星鲁王馆"/>
+        <vm:PersonalBook Id="0" BookId="1" Title="书籍名称" Author="南派三叔" ChapterId="0" ChapterTitle="七星鲁王馆"/>
+    </vx:BookViewModel.Items>
+
+</vx:BookViewModel>
